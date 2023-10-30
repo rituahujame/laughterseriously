@@ -27,97 +27,80 @@
     <style>
       /* General styling for the entire body of the webpage */
       body {
-        margin: 0; /* Removes default margin around the body */
-        font-family: Arial, sans-serif; /* Sets the default font for the body to Arial; falls back to sans-serif if Arial is unavailable */
+        margin: 0; /* Removes margin space around everything */
+        font-family: Arial, sans-serif; /* Sets font to Arial */
       }
 
-      /* Styling for anchor tags (links) in their normal and visited states */
-      a, a:visited {
+      a, a:visited { /* Links in their normal and visited states */
         text-decoration: none; /* Removes underlines from links */
-        color: blue; /* Sets the color of links to blue */
+        color: blue; /* Links always blue */
       }
 
-      /* Styling for H1 and H2 headings */
-      h1, h2 {
-        font-family: Georgia, serif; /* Sets the font for H1 and H2 to Georgia; falls back to serif if Georgia is unavailable */
+      h1, h2 { /* H1 and H2 headings */
+        font-family: Georgia, serif; /* Sets font to Georgia */
       }
 
-      /* Styling for the menu container */
-      #menu {
-        background-color: lightgreen; /* Sets the background color of the menu to light green */
-        padding: 1em; /* Adds padding around the content inside the menu */
+      #menu { /* Menu container */
+        background-color: lightgreen; /* Light green menu background */
+        padding: 1em; /* Adds padding around the inside of menu */
+        overflow-y: auto; /* Allows scrolling menu is too tall */
       }
 
-      /* Styling for the main content container */
-      #content {
-        overflow-y: auto; /* Allows vertical scrolling if the content exceeds the container's height */
-        scroll-behavior: smooth; /* Makes in-page scrolling (e.g., anchor links) smooth */
-        background-image: url('clouds.jpeg'); /* Sets a background image for the content */
+      #content { /* Main content container */
+        overflow-y: auto; /* Allows vertical scrolling */
+        scroll-behavior: smooth; /* Makes scrolling to anchors smooth */
+        background-image: url('clouds.jpeg'); /* Background clouds */
+        background-attachment: fixed; /* Image won't move */
       }
 
-      /* Styling for individual sections inside the content */
-      section {
-        padding: 1em; /* Adds padding around each section */
+      section { /* Individual sections */
+        padding: 1em; /* Pads each section to replace margins */
       }
 
-      /* Styles for desktop or landscape view with a viewport width of 700px or more */
+      /* Desktop or landscape view: 700px or more */
       @media (min-width: 700px) {
         body {
-          display: flex; /* Uses flexbox layout for body to place menu and content side by side */
-          height: 100vh; /* Sets the body height to the full viewport height */
+          display: flex; /* Flex layout puts menu and content side by side */
+          height: 100vh; /* Prevents menu from scrolling away */
         }
-
         #menu {
-          width: 30%; /* Menu occupies 30% of the viewport width */
-          word-wrap: break-word; /* Ensures long words or URLs break to the next line instead of overflowing */
+          width: 30vw; /* Menu is 30% of viewport width */
         }
-
         #content {
-          width: 70%; /* Content occupies 70% of the viewport width */
+          width: 70vw; /* Content is 70% of viewport width */
         }
-
-        /* Styling for list items in the desktop/landscape view */
         li {
-          margin-bottom: 1em; /* Adds space below each list item */
+          margin-bottom: 1em; /* Adds space below list items */
         }
       }
 
-      /* Styles for mobile or portrait view with a viewport width of 699px or less */
+      /* Mobile/portrait view: 699px or less */
       @media (max-width: 699px) {
         #menu {
-          width: 100%; /* Menu occupies the full viewport width */
-          height: 20vh; /* Menu height is set to 20% of the viewport height */
-          position: fixed; /* Makes the menu stick to its position even on scroll */
-          bottom: 0; /* Positions the menu at the bottom of the viewport */
-        }
-
-        #menu h2, ul, h4 { /* This keeps the whole menu on screen. Unsure of why needed. */
-          padding-right: 1em; /* Adds padding to the right side of these elements */
+          height: 20vh; /* Menu is 20% of the viewport height */
+          bottom: 0; /* Positions menu at bottom of viewport */
+          position: fixed; /* Menu stays in position on scroll */
         }
 
         #content {
-          width: 100%; /* Content occupies the full viewport width */
-          height: 80vh; /* Content height is set to 80% of the viewport height */
-          top: 0; /* Ensures content starts at the top of the viewport */
+          height: 80vh; /* Content is 80% of viewport height */
         }
 
-        /* Styling for unordered lists in mobile/portrait view */
-        ul {
-          list-style: none; /* Removes default bullets from the list */
-          padding-left: 0; /* Removes default padding from the left of the list */
-          text-align: center; /* Centers the list items horizontally */
+        ul { /* Styling for lists in mobile/portrait view */
+          list-style: none; /* Removes default bullets from lists */
+          padding-left: 0; /* Removes padding from left of lists */
+          text-align: center; /* Centers lists horizontally */
         }
         li {
-          display: inline; /* Displays list items inline (horizontally) */
+          display: inline; /* Displays list items horizontally */
           margin-right: 10px; /* Adds space to the right of each list item */
-          margin-bottom: 0; /* Removes space below each list item */
         }
         li::after {
-          content: "•"; /* Adds a bullet symbol after each list item */
-          margin-left: 10px;
+          content: "•"; /* Adds a bullet after each item */
+          margin-left: 10px; /* Adds space after each item */
         }
         li:last-child::after {
-          content: ""; /* Ensures the last list item doesn't have the bullet symbol after it */
+          content: ""; /* Removes bullet from end of list */
         }
       }
     </style>
@@ -133,7 +116,7 @@
       </h2>
       <ul>
         <li><a href="#laughterYoga">Laughter&nbsp;Yoga</a></li>
-        <li><a href="#yogaNidra">Yogar&nbsp;Nidra</a></li>
+        <li><a href="#yogaNidra">Yoga&nbsp;Nidra</a></li>
         <li><a href="#about">About</a></li>
         <!--
         <li><a href="#testimonials">Testimonials</a></li>
@@ -216,7 +199,7 @@
           
         </small>
       </section>
-      <br /><br /><br /><br /><br /><!-- for scrolling to bottom, not sure why -->
+      <br /><br /><!-- for scrolling to bottom, not sure why -->
     </div>
   </body>
 </html>
